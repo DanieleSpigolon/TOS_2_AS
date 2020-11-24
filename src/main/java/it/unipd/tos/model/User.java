@@ -17,12 +17,6 @@ public class User {
         this.cognome=cognome;
         this.eta=eta;
     }
-    public User(){
-        id=null;
-        nome=null;
-        cognome=null;
-        eta=0;
-    }
     String getId(){
         return id;
     }

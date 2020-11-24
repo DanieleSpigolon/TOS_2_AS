@@ -29,7 +29,7 @@ public class TakeAwayBillClassTest {
     @Test
     public void testWithoutDiscountOrderPriceCalculation() {
         List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
-        User user=new User();
+        User user = new User("110","Daniele","Spigolon",21);
         for(int i = 0; i < 3; ++i) {
             itemsOrdered.add(new MenuItem(ItemType.Gelati, "BananaSplit", 4.0));
         }
@@ -43,7 +43,7 @@ public class TakeAwayBillClassTest {
     @Test
     public void testDiscountForLowestPriceIceCreamsIfMoreThan5IcreCreams() {
         List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
-        User user = new User();
+        User user = new User("110","Daniele","Spigolon",21);
         for(int i = 0; i < 5; ++i) {
             itemsOrdered.add(new MenuItem(ItemType.Gelati, "BananaSplit", 5.0));
         }
@@ -58,7 +58,7 @@ public class TakeAwayBillClassTest {
     @Test
     public void testDiscountIfIceCreamAndBudinPriceIfMoreThan50() {
         List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
-        User user = new User();
+        User user = new User("110","Daniele","Spigolon",21);
         for(int i = 0; i < 4; ++i) {
             itemsOrdered.add(new MenuItem(ItemType.Gelati, "CoppaNafta", 5.0));
             itemsOrdered.add(new MenuItem(ItemType.Budini, "Pinguino", 10.0));
@@ -74,7 +74,7 @@ public class TakeAwayBillClassTest {
     @Test
     public void test2DiscountForMoreThan5IceCreamsAndPriceMoreThan50() {
         List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
-        User user = new User();
+        User user = new User("110","Daniele","Spigolon",21);
         for(int i = 0; i < 7; ++i) {
             itemsOrdered.add(new MenuItem(ItemType.Gelati, "BananaSplit", 5.0));
             itemsOrdered.add(new MenuItem(ItemType.Budini, "Pinguino", 10.0));
@@ -91,7 +91,7 @@ public class TakeAwayBillClassTest {
             throws TakeAwayBillException {
 
         List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
-        User user = new User();
+        User user = new User("110","Daniele","Spigolon",21);
         for(int i = 0; i < 31; ++i) {
             itemsOrdered.add(new MenuItem(ItemType.Bevande, "Cola", 3.5));
         }
@@ -101,7 +101,7 @@ public class TakeAwayBillClassTest {
     @Test
     public void testForOrderWithPriceMinorThan10() {
         List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
-        User user = new User();
+        User user = new User("110","Daniele","Spigolon",21);
         for(int i = 0; i < 3; ++i) {
             itemsOrdered.add(new MenuItem(ItemType.Bevande, "LemonSoda", 1.5));
         }
@@ -116,7 +116,7 @@ public class TakeAwayBillClassTest {
     @Test
     public void testOrderWith0ElementthereforeWithoutElements() {
         List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
-        User user = new User();
+        User user = new User("110","Daniele","Spigolon",21);
 
         try {
             assertEquals(0.0, takeAwayBill.getOrderPrice(itemsOrdered,user), 0);
