@@ -48,7 +48,9 @@ public class TakeAwayBillClass implements TakeAwayBill {
         if(totalIceCreamAndBudin > 50.0) {
             totalDiscount += totalPrice * 0.10;
         }
-        
+        if(totalPrice > 0.0 && totalPrice < 10.0) {
+            totalDiscount -= 0.5;
+        }
         return totalPrice - totalDiscount;
     }
 
